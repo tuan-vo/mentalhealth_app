@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mentalhealth_app/util/emoticon_face.dart';
+import 'package:mentalhealth_app/util/exercise_title.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -154,12 +155,12 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 25),
             Expanded(
               child: Container(
-                color: Colors.grey[100],
+                color: Colors.grey[200],
                 padding: EdgeInsets.all(25),
-                child: const Center(
+                child: Center(
                   child: Column(
                     children: [
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
@@ -170,6 +171,37 @@ class _HomePageState extends State<HomePage> {
                           Icon(Icons.more_horiz)
                         ],
                       ),
+                      const SizedBox(height: 20),
+                      Expanded(
+                        child: ListView(
+                          children: const [
+                            ExerciseTile(
+                              icon: Icons.favorite,
+                              exerciseName: "Speaking Skills",
+                              numberOfExercise: 16,
+                              color: Colors.orange,
+                            ),
+                            ExerciseTile(
+                              icon: Icons.person,
+                              exerciseName: "Reading Skills",
+                              numberOfExercise: 12,
+                              color: Colors.green,
+                            ),
+                            ExerciseTile(
+                              icon: Icons.star,
+                              exerciseName: "Writing Skills",
+                              numberOfExercise: 20,
+                              color: Colors.red,
+                            ),
+                            ExerciseTile(
+                              icon: Icons.star,
+                              exerciseName: "Listening Skills",
+                              numberOfExercise: 20,
+                              color: Colors.blue,
+                            ),
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 ),
